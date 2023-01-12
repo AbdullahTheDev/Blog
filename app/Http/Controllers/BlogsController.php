@@ -75,11 +75,32 @@ class BlogsController extends Controller
      * @param  \App\Models\Blogs  $blogs
      * @return \Illuminate\Http\Response
      */
+    public function show_blog($slug)
+    {
+        return view('Blog.blog');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Blogs  $blogs
+     * @return \Illuminate\Http\Response
+     */
     public function show_blogs(Blogs $blogs)
     {
         return view('Blog.blogs');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Blogs  $blogs
+     * @return \Illuminate\Http\Response
+     */
+    public function blogs_by_category($slug)
+    {
+        return view('Blog.blogs');
+    }
     /**
      * Show the form for editing the specified resource.
      *

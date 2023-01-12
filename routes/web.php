@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// User Routes
+
+Route::get('/', [BlogsController::class, 'index']);
+
+// Blogs
+
+Route::get('/blogs', [BlogsController::class, 'show_blogs']);
+Route::get('/blog/{slug}', [BlogsController::class, 'show_blog']);
+Route::get('/blog/category/{slug}', [BlogsController::class, 'blogs_by_category']);
